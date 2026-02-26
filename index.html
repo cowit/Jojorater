@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html {
+            height: 100%;
+            background: #bd00b6;
+            background-image: url("papyrus_42_99_diffuse.jpg");
+        }
+
+        body {
+            background: linear-gradient(178deg, rgba(189, 0, 182, 0.5) 16%, rgba(247, 209, 119, 0.5) 71%, rgba(247, 209, 119, 0.5) 77%, rgba(157, 242, 221, 1) 100%);
+            color: white;
+            margin: 0;
+            height: 100%;
+        }
+
+        #settings-menu {
+            border-radius: 15px;
+            padding: 10px;
+            width: 350px;
+            background-color: rgba(74, 74, 74, 0.516);
+        }
+
+        .settings-layer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .settings-input {
+            height: 18px;
+            width: 110px;
+        }
+
+        .settings-text {
+            margin: 0;
+            margin-top: 1px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        #radar {
+            position: absolute;
+            bottom: 100px;
+            left: 300px;
+        }
+
+        #radar-canvas {
+            position: absolute;
+            bottom: 100px;
+            left: 300px;
+            height: 512px;
+            width: 512px;
+        }
+
+        #character-image {
+            width: 1200px;
+            top: 10px;
+            position: absolute;
+            right: 200px;
+        }
+
+        #character-name-header {
+            font-size: 60px;
+            position: absolute;
+            top: 20px;
+            left: 300px;
+            text-shadow: 1px 1px 10px rgb(0, 0, 0);
+        }
+
+        #character-name-display {
+            font-size: 90px;
+            position: absolute;
+            top: 50px;
+            left: 300px;
+            text-shadow: 1px 1px 10px rgb(0, 0, 0);
+        }
+
+        #master-name-header {
+            font-size: 60px;
+            position: absolute;
+            bottom: 140px;
+            right: 300px;
+            text-shadow: 1px 1px 10px rgb(0, 0, 0);
+        }
+
+        #master-name-display {
+            font-size: 90px;
+            position: absolute;
+            bottom: 20px;
+            right: 300px;
+            text-shadow: 1px 1px 10px rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="settings-menu">
+        <div class="settings-layer">
+            <p class="settings-text">Character Name: </p>
+            <input class="settings-input" id="character-name" type="text" style="width: 150px;">
+        </div>
+        <div class="settings-layer">
+            <p class="settings-text">Character Master: </p>
+            <input class="settings-input" id="character-master" type="text" style="width: 150px;">
+        </div>
+        <div class="stats-container" style="display: flex;">
+            <div>
+                <p class="settings-text">Potential </p>
+                <p class="settings-text">Power </p>
+                <p class="settings-text">Speed </p>
+                <p class="settings-text">Range </p>
+                <p class="settings-text">Durability </p>
+                <p class="settings-text">Precision </p>
+            </div>
+            <div style="width: 45px;">
+                <input class="settings-input" id="character-potential" type="range" min="0" max="6">
+                <input class="settings-input" id="character-power" type="range" min="0" max="6">
+                <input class="settings-input" id="character-speed" type="range" min="0" max="6">
+                <input class="settings-input" id="character-range" type="range" min="0" max="6">
+                <input class="settings-input" id="character-durability" type="range" min="0" max="6">
+                <input class="settings-input" id="character-precision" type="range" min="0" max="6">
+            </div>
+        </div>
+    </div>
+    <picture id="character-display"></picture>
+    <img id="character-image" src="Sillin_Future_ful.png">
+    <p id="character-name-header">[ CHARACTER NAME ]</p>
+    <p id="character-name-display">SILLIN MERCURIA</p>
+    <p id="master-name-header">[ CHARACTER MASTER ]</p>
+    <p id="master-name-display">COWIT</p>
+    <canvas id="radar-canvas"></canvas>
+    <img id="radar" src="./radar.png">
+</body>
+
+<script src="./script.js"></script>
+
+</html>
