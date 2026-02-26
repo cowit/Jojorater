@@ -109,3 +109,9 @@ document.getElementById("character-name").addEventListener("input", (event) => {
 document.getElementById("character-master").addEventListener("input", (event) => {
     document.getElementById("master-name-display").textContent = event.target.value
 })
+
+document.getElementById("character-image").addEventListener("change", (event) => {
+    console.log(event.target.value)
+    console.log(event.target.files)
+    document.getElementById("character-image-display").src = URL.createObjectURL(event.target.files[0])
+})
